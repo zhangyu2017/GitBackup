@@ -172,7 +172,7 @@ esac
 source ~/root-5.3436/bin/thisroot.sh
 source ~/Geant4/bin/geant4.sh
 alias ps="ps -e"
-alias gg="google-chrome &"
+alias gg="google-chrome & --silent"
 alias ls="ls --color=auto"
 alias ins="sudo apt-get install"
 alias update="sudo apt-get update"
