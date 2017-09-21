@@ -60,11 +60,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]\t-\w\n\[\e[1;35m\]\$:\[\e[1;33m\]'
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
+PS1='${debian_chroot:+($debian_chroot)}\[\033[1;31m\]\t-\[\e[1;33m\]\w\n\[\e[1;31m\]►\[\e[1;32m\]'
 unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
@@ -170,9 +166,10 @@ xterm*|rxvt*)
     ;;
 esac
 source ~/root-5.3436/bin/thisroot.sh
+#source ~/root-7/bin/thisroot.sh
 source ~/Geant4/bin/geant4.sh
 alias ps="ps -e"
-alias gg="google-chrome & --silent"
+alias gg="google-chrome  --silent &"
 alias ls="ls --color=auto"
 alias ins="sudo apt-get install"
 alias update="sudo apt-get update"
@@ -182,11 +179,10 @@ alias du="du --max-depth=0 -ha"
 alias root="root "
 alias ev='evince'
 alias na='na() { grep -rin $1 ;};na '
+alias ming='ming() { find -name $1 ;};ming'
 alias rt='root -q -b -l'
-fortune|cowsay
+echo -e "\e[0;31m `fortune`"
 alias grep='grep --color=always'
 alias ok='okular'
-#oneko &
-#source ~/geant4.1003/bin/geant4.sh
 #convert -verbose -colorspace RGB -resize 1800 -interlace none -density 300 -quality 100 XXX.pdf XXX.jpg
 farm=zhangyu@122.204.129.3
